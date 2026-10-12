@@ -1,0 +1,19 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { MenuIcon } from 'lucide-react';
+import { buttonVariants } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { ThemeToggle } from '@/components/ThemeToggle';
+
+const links = [{ href: '/services', label: 'Services' }, { href: '/about', label: 'About' }, { href: '/work', label: 'Work' }, { href: '/resources', label: 'Resources' }];
+
+export const SiteFrame = (props: { children: React.ReactNode }) => <div className="min-h-screen overflow-x-hidden">
+  <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-primary focus:p-3 focus:text-primary-foreground">Skip to content</a>
+  <header className="border-b border-border bg-background"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+    <Link href="/" className="flex items-center gap-3"><Image src="/brand/icon.png" alt="" width={128} height={128} priority className="size-16 object-contain md:size-18" /><span className="block w-32 md:w-40"><Image src="/brand/logo-light.png" alt="AdBuzz Digital" width={860} height={231} priority className="h-auto w-full dark:hidden" /><Image src="/brand/logo-dark.png" alt="AdBuzz Digital" width={850} height={230} priority className="hidden h-auto w-full dark:block" /></span></Link>
+    <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm font-semibold md:flex">{links.map((link) => <Link key={link.href} href={link.href} className="transition-colors hover:text-primary">{link.label}</Link>)}<ThemeToggle /><Link href="/contact" className={buttonVariants({ size: 'lg' })}>Discuss your project</Link></nav>
+    <div className="flex items-center gap-2 md:hidden"><ThemeToggle /><Sheet><SheetTrigger className={buttonVariants({ variant: 'outline', size: 'icon-lg' })} aria-label="Open navigation"><MenuIcon /></SheetTrigger><SheetContent side="right" className="bg-background"><SheetHeader><SheetTitle>Navigation</SheetTitle><SheetDescription>Explore AdBuzz Digital.</SheetDescription></SheetHeader><nav aria-label="Mobile navigation" className="flex flex-col gap-1 p-4">{links.map((link) => <Link key={link.href} href={link.href} className={buttonVariants({ variant: 'ghost', size: 'lg', className: 'justify-start' })}>{link.label}</Link>)}<Link href="/contact" className={buttonVariants({ size: 'lg', className: 'mt-3' })}>Discuss your project</Link></nav></SheetContent></Sheet></div>
+  </div></header>
+  <main id="main">{props.children}</main>
+  <footer className="border-t border-[var(--line)] bg-[var(--paper)] text-[var(--ink)]"><div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-2 md:px-8"><div><span className="block w-64"><Image src="/brand/logo-light.png" alt="AdBuzz Digital" width={860} height={231} className="h-auto w-full dark:hidden" /><Image src="/brand/logo-dark.png" alt="AdBuzz Digital" width={850} height={230} className="hidden h-auto w-full dark:block" /></span><p className="mt-4 max-w-md text-[var(--site-muted)]">Marketing, creative and websites built around the next useful move for your business.</p></div><div className="grid grid-cols-2 gap-6 text-sm"><div><p className="mb-3 font-bold text-primary">Explore</p>{links.map((link) => <Link key={link.href} href={link.href} className="mb-2 block hover:text-primary">{link.label}</Link>)}</div><div><p className="mb-3 font-bold text-primary">Start a conversation</p><Link href="/contact" className="hover:text-primary">Contact AdBuzz Digital</Link><Link href="/privacy-policy" className="mt-2 block hover:text-primary">Privacy policy</Link><Link href="/terms" className="mt-2 block hover:text-primary">Terms</Link></div></div></div></footer>
+</div>;

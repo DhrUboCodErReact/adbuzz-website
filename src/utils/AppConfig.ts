@@ -1,27 +1,13 @@
-import { enUS, frFR } from '@clerk/localizations';
-import type { LocalizationResource } from '@clerk/shared/types';
 import type { LocalePrefixMode } from 'next-intl/routing';
+import { enUS } from '@clerk/localizations';
+import type { LocalizationResource } from '@clerk/shared/types';
 
 /** Locale prefix strategy for next-intl routing. */
 const localePrefix: LocalePrefixMode = 'as-needed';
 
-// FIXME: Customize this configuration for your product
-/** Centralized application configuration */
 export const AppConfig = {
-  name: 'Nextjs Starter',
-  i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'en',
-    localePrefix,
-  },
+  name: 'AdBuzz Digital',
+  i18n: { locales: ['en'], defaultLocale: 'en', localePrefix },
 };
 
-const supportedLocales: Record<string, LocalizationResource> = {
-  en: enUS,
-  fr: frFR,
-};
-
-export const ClerkLocalizations = {
-  defaultLocale: enUS,
-  supportedLocales,
-};
+export const ClerkLocalizations: { defaultLocale: LocalizationResource; supportedLocales: Record<string, LocalizationResource> } = { defaultLocale: enUS, supportedLocales: { en: enUS } };
