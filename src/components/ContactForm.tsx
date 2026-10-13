@@ -117,7 +117,10 @@ export function ContactForm(props: {
 
   return (
     <form className="bg-card p-6 ring-1 ring-border" aria-describedby="form-note" onSubmit={handleSubmit}>
-      <div className="absolute -left-9999px" aria-hidden="true">
+      <div
+        className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden whitespace-nowrap"
+        aria-hidden="true"
+      >
         <label htmlFor="website">Website</label>
         <input id="website" name="website" tabIndex={-1} autoComplete="off" />
       </div>
