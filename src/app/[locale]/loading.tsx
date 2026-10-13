@@ -1,5 +1,3 @@
-import { BrandLoader } from '@/components/BrandLoader';
-
 export default function LoadingPage() {
-  return <BrandLoader />;
+  return <div className="min-h-dvh bg-background" aria-busy="true" />;
 }
