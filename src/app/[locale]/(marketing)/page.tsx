@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { DownloadIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HeroBrandVideo } from '@/components/HeroBrandVideo';
@@ -118,6 +119,19 @@ export default function HomePage() {
               >
                 Explore services
               </Link>
+              <a
+                href="/brochures/adbuzz-digital-service-brochure.pdf"
+                download="AdBuzz-Digital-Service-Brochure.pdf"
+                className={buttonVariants({
+                  variant: 'outline',
+                  size: 'lg',
+                  className:
+                    'rounded-none px-6 transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] motion-reduce:transition-none',
+                })}
+              >
+                <DownloadIcon aria-hidden="true" />
+                Download service brochure
+              </a>
             </div>
           </div>
           <HeroBrandVideo />
