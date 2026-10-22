@@ -7,7 +7,7 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/comp
 import { getReadingTime, insights } from '@/lib/insights';
 
 export const metadata: Metadata = {
-  title: 'Insights | AdBuzz Digital',
+  title: 'Insights & Digital Marketing Guides',
   description:
     'Practical perspectives on brand strategy, digital marketing, content and business growth.',
   alternates: { canonical: '/insights' },
