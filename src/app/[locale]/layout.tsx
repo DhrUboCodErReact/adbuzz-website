@@ -6,6 +6,28 @@ import { Analytics } from '@vercel/analytics/next';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
 
+const businessStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://www.adbuzzdigital.com/#business',
+  name: 'AdBuzzDigital',
+  url: 'https://www.adbuzzdigital.com/',
+  description: 'Digital marketing, branding, social media and website development agency based in Berhampore, Murshidabad.',
+  areaServed: [
+    { '@type': 'Place', name: 'Berhampore, West Bengal, India' },
+    { '@type': 'AdministrativeArea', name: 'Murshidabad, West Bengal, India' },
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Berhampore',
+    addressRegion: 'West Bengal',
+    addressCountry: 'IN',
+  },
+  sameAs: [
+    'https://www.instagram.com/adbuzz.digital/',
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.adbuzzdigital.com'),
   title: { default: 'AdBuzzDigital | Create Buzz. Build Brands.', template: '%s | AdBuzz Digital' },
@@ -29,6 +51,7 @@ export default async function RootLayout(props: {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessStructuredData) }} />
         <NextIntlClientProvider>{props.children}</NextIntlClientProvider>
         <Analytics />
       </body>

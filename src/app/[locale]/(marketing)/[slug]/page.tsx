@@ -402,12 +402,19 @@ export async function generateMetadata(props: {
   if (service) {
     return {
       title: service.name,
-      description: service.description,
+      description: `${service.description} AdBuzzDigital serves businesses in Berhampore, Murshidabad and works with brands online.`,
       alternates: { canonical: `/${slug}` },
     };
   }
   return {
     title: slug === 'contact' ? 'Contact Us' : slug === 'services' ? 'Digital Marketing & Creative Services' : slug === 'about' ? 'About Our Agency' : slug === 'privacy-policy' ? 'Privacy Policy' : slug === 'terms-and-conditions' ? 'Terms and Conditions' : 'AdBuzzDigital',
+    description: ({
+      services: 'Explore branding, social media marketing, SEO, websites and creative services from AdBuzzDigital in Berhampore, Murshidabad.',
+      about: 'Learn about AdBuzzDigital, a creative and digital marketing agency based in Berhampore, Murshidabad.',
+      contact: 'Contact AdBuzzDigital in Berhampore, Murshidabad to discuss branding, marketing, website development and creative projects.',
+      'privacy-policy': 'Read the AdBuzzDigital privacy policy and how we handle website information.',
+      'terms-and-conditions': 'Review the terms and conditions for using the AdBuzzDigital website.',
+    } as Record<string, string>)[slug],
     alternates: { canonical: `/${slug}` },
   };
 }
