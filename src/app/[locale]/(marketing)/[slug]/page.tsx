@@ -401,13 +401,13 @@ export async function generateMetadata(props: {
   const service = services.find((item) => item.slug === slug);
   if (service) {
     return {
-      title: `${service.name} | AdBuzz Digital`,
+      title: service.name,
       description: service.description,
       alternates: { canonical: `/${slug}` },
     };
   }
   return {
-    title: slug === 'contact' ? 'Contact AdBuzz Digital' : 'AdBuzz Digital',
+    title: slug === 'contact' ? 'Contact Us' : slug === 'services' ? 'Digital Marketing & Creative Services' : slug === 'about' ? 'About Our Agency' : slug === 'privacy-policy' ? 'Privacy Policy' : slug === 'terms-and-conditions' ? 'Terms and Conditions' : 'AdBuzzDigital',
     alternates: { canonical: `/${slug}` },
   };
 }
