@@ -12,9 +12,10 @@ import {
 import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Creative, Marketing & Website Development Agency | AdBuzz Digital',
+  title: 'Digital Marketing Agency in Berhampore',
   description:
-    'AdBuzz Digital helps ambitious businesses build visibility, create better content, run focused campaigns and launch websites that turn attention into enquiries.',
+    'AdBuzzDigital is a creative digital marketing agency in Berhampore, Murshidabad, helping brands with social media, branding, SEO and website development.',
+  alternates: { canonical: 'https://www.adbuzzdigital.com/' },
 };
 const services = [
   [
