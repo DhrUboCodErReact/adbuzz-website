@@ -7,12 +7,11 @@ import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://adbuzzdigital.com'),
-  title: { default: 'AdBuzz Digital | Create Buzz. Make Brand.', template: '%s | AdBuzz Digital' },
+  metadataBase: new URL('https://www.adbuzzdigital.com'),
+  title: { default: 'AdBuzzDigital | Create Buzz. Build Brands.', template: '%s | AdBuzz Digital' },
   description:
     'Digital marketing, creative and website development for ambitious businesses worldwide.',
   icons: { icon: '/brand/favicon-64.png', apple: '/brand/icon-180.png' },
-  alternates: { canonical: '/' },
   openGraph: { type: 'website', locale: 'en_IN', siteName: 'AdBuzz Digital' },
   twitter: { card: 'summary' },
 };
