@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ecommerce-digital-solutions',
     '/about',
     '/insights',
+    '/insights/more-posts-wont-grow-your-business-better-marketing-might',
     '/insights/instagram-reels-reach-recognizable-brand',
     '/insights/brand-identity-before-advertising',
     '/insights/practical-marketing-audit-before-ads',
