@@ -20,5 +20,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/privacy-policy',
     '/terms-and-conditions',
-  ].map((path) => ({ url: `${baseUrl}${path}`, lastModified: new Date() }));
+  ].map((path) => ({ url: `${baseUrl}${path}` }));
 }
