@@ -1,9 +1,10 @@
 import type { InsightArticle } from './insights';
+import { fullSmallBusinessMarketingHtml } from './insights-full-article-html';
 
 export const smallBusinessMarketingArticle: InsightArticle = {
   slug: 'more-posts-wont-grow-your-business-better-marketing-might',
   title: 'More Posts Won’t Grow Your Business. Better Marketing Might.',
-  excerpt: 'An honest, practical guide to helping local shops attract customers, build trust and grow with digital marketing—without wasting money on trends or content that goes nowhere.',
+  excerpt: 'An honest, practical guide to helping local shops attract customers, build trust, and grow with digital marketing—without wasting money on trends, advertisements, or content that goes nowhere.',
   category: 'Digital Marketing',
   tags: ['Digital marketing for small businesses', 'Local SEO', 'Google Business Profile', 'Social media strategy', 'WhatsApp Business', 'Marketing ROI'],
   coverImage: '/images/insights/more-posts-better-marketing.webp',
@@ -12,6 +13,8 @@ export const smallBusinessMarketingArticle: InsightArticle = {
   author: 'AdBuzz Digital',
   seoTitle: 'Digital Marketing for Small Businesses: Beyond Posting | AdBuzz Digital',
   seoDescription: 'Learn how local SEO, Google Business Profile, useful social content, WhatsApp and tracking help small businesses build trust and attract customers.',
+  fullHtml: fullSmallBusinessMarketingHtml,
+  fullToc: [{"heading":"The customer has changed. Has your marketing?","id":"the-customer-has-changed-has-your-marketing"},{"heading":"1. Start with Google before spending money on advertisements","id":"1-start-with-google-before-spending-money-on-advertisements"},{"heading":"2. Stop treating social media like a digital noticeboard","id":"2-stop-treating-social-media-like-a-digital-noticeboard"},{"heading":"3. You don't need to post every day. You need a system you can maintain.","id":"3-you-don-t-need-to-post-every-day-you-need-a-system-you-can-maintain"},{"heading":"4. Use WhatsApp to make buying easier—not to fill people's inboxes","id":"4-use-whatsapp-to-make-buying-easier-not-to-fill-people-s-inboxes"},{"heading":"5. Before running advertisements, know what you're trying to achieve","id":"5-before-running-advertisements-know-what-you-re-trying-to-achieve"},{"heading":"6. Likes are not the same as customers","id":"6-likes-are-not-the-same-as-customers"},{"heading":"7. The AI content trap: when publishing more becomes the goal","id":"7-the-ai-content-trap-when-publishing-more-becomes-the-goal"},{"heading":"8. What should you expect from a digital marketing agency?","id":"8-what-should-you-expect-from-a-digital-marketing-agency"},{"heading":"9. A practical 30-day plan you can start today","id":"9-a-practical-30-day-plan-you-can-start-today"},{"heading":"10. How do you know when it's time to get professional help?","id":"10-how-do-you-know-when-it-s-time-to-get-professional-help"},{"heading":"Our approach at AdBuzz Digital: understand the business before creating the content","id":"our-approach-at-adbuzz-digital-understand-the-business-before-creating-the-content"},{"heading":"The real question isn't how often you post","id":"the-real-question-isn-t-how-often-you-post"}],
   sections: [
     {
       heading: 'Why being easy to discover matters more than posting more',
