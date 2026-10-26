@@ -30,7 +30,10 @@ export type InsightArticle = {
   sections: InsightSection[];
 };
 
+import { smallBusinessMarketingArticle } from './insights-small-business-marketing';
+
 export const insights: InsightArticle[] = [
+  smallBusinessMarketingArticle,
   {
     slug: 'instagram-reels-reach-recognizable-brand',
     title: 'How Instagram Reels Can Expand Your Reach and Build a Recognizable Brand',
