@@ -388,10 +388,10 @@ export default async function InsightArticlePage(props: { params: Promise<{ slug
         <aside className="lg:sticky lg:top-6 lg:self-start">
           <p className="text-xs font-bold tracking-[0.16em] text-primary">ON THIS PAGE</p>
           <ol className="mt-4 grid gap-3 text-sm">
-            {article.sections.map((section) => (
+            {(article.fullToc ?? article.sections.map((section) => ({ heading: section.heading, id: section.heading.toLowerCase().replace(/[^a-z0-9]+/g, '-') }))).map((section) => (
               <li key={section.heading}>
                 <a
-                  href={`#${section.heading.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                  href={`#${section.id}`}
                   className="text-muted-foreground hover:text-primary"
                 >
                   {section.heading}
@@ -402,7 +402,9 @@ export default async function InsightArticlePage(props: { params: Promise<{ slug
         </aside>
         <article className="min-w-0">
           <div className="grid gap-10">
-            {article.sections.map((section) => (
+            {article.fullHtml ? (
+              <div dangerouslySetInnerHTML={{ __html: article.fullHtml }} />
+            ) : article.sections.map((section) => (
               <section
                 key={section.heading}
                 id={section.heading.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
