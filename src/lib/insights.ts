@@ -216,11 +216,13 @@ export const insights: InsightArticle[] = [
 ];
 
 export function getReadingTime(article: InsightArticle) {
-  const words = article.fullHtml ? article.fullHtml.replace(/<[^>]*>/g, ' ').trim().split(/\s+/).filter(Boolean).length : article.sections
-    .flatMap((section) => [section.heading, ...section.paragraphs, ...(section.bullets ?? [])])
-    .join(' ')
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean).length;
-  return Math.max(1, Math.ceil((typeof words === 'number' ? words : words) / 220));
+  const wordCount = article.fullHtml
+    ? article.fullHtml.replace(/<[^>]*>/g, ' ').trim().split(/\s+/).filter(Boolean).length
+    : article.sections
+        .flatMap((section) => [section.heading, ...section.paragraphs, ...(section.bullets ?? [])])
+        .join(' ')
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean).length;
+  return Math.max(1, Math.ceil(wordCount / 220));
 }
